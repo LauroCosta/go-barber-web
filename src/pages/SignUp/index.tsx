@@ -10,9 +10,8 @@ import api from '../../services/api';
 
 import { useToast } from '../../hooks/toast';
 import logoImg from '../../assets/logo.svg';
-
-import Button from '../../components/Button';
 import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 import { Container, Content, AnimationContainer, Background } from './styles';
 
@@ -43,8 +42,8 @@ const SignUp: React.FC = () => {
           abortEarly: false,
         });
 
-        history.push('/users', data);
         await api.post('/users', data);
+        history.push('/');
         addToast({
           type: 'success',
           title: 'cadastro realizado',
